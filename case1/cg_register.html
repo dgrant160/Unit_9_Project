@@ -19,6 +19,9 @@
    <title>CGIP Registration Form</title>
    <link href="cg_base.css" rel="stylesheet" />
    <link href="cg_styles.css" rel="stylesheet" />
+   <link href="cg_forms.css" rel="stylesheet" />
+   <link href="cg_validate.css" rel="stylesheet" />
+   <script src="cg_script.js"></script>
 </head>
 
 <body>
@@ -50,7 +53,50 @@
    <section>
       <h1>Conference Registration Form</h1>
       <p>Required Item (*)</p>
+      <form id="survey" action="http://www.example.com/cg/register" method="post">
       
+         <div class="formRow">
+            <label for="title">Title</label>
+            <input name="title" id="titleBox" type="text" />
+         </div>
+         <div class="formRow">
+            <label for="firstName">First Name*</label>
+            <input name="firstName" id="fnBox" type="text" required />
+         </div>
+         <div class="formRow">
+            <label for="lastName">Last Name*</label>
+            <input name="lastName" id="lnBox" type="text" required />
+         </div>
+         <div class="formRow">
+            <label for="address">Address*</label>
+            <input name="address" id="addBox" type="text" required />
+         </div>
+         <div class="formRow">
+            <label for="group">Company or University</label>
+            <input name="group" id="groupBox" type="text" />
+         </div>
+         <div class="formRow">
+            <label for="email">E-mail*</label>
+            <input name="email" id="mailBox" type="email" required />
+         </div>
+         <div class="formRow">
+            <label for="phoneNumber">Phone Number*</label>
+            <input name="phoneNumber" id="phoneBox" type="tel" placeholder="(nnn) nnn-nnnn" 
+            pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$" required />
+         </div>
+         <div class="formRow">
+            <label for="acgipID">ACGIP Membership Number</label>
+            <input name="acgipID" id="idBox" placeholder="acgip-nnnnnn" type="text" 
+            pattern="^acgip\-\d{6}$" />
+         </div>
+         
+
+
+
+
+
+
+
    </section>
    
    <aside>
