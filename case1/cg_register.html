@@ -5,13 +5,10 @@
       New Perspectives on HTML5 and CSS3, 7th Edition
       Tutorial 7
       Case Problem 1
-
       CGIP Registration Form
-      Author: 
+      Author:
       Date:   
-
       Filename:   cg_register.html
-
    -->
    
    <meta charset="utf-8" />
@@ -53,50 +50,55 @@
    <section>
       <h1>Conference Registration Form</h1>
       <p>Required Item (*)</p>
-      <form id="survey" action="http://www.example.com/cg/register" method="post">
       
-         <div class="formRow">
-            <label for="title">Title</label>
-            <input name="title" id="titleBox" type="text" />
-         </div>
-         <div class="formRow">
-            <label for="firstName">First Name*</label>
-            <input name="firstName" id="fnBox" type="text" required />
-         </div>
-         <div class="formRow">
-            <label for="lastName">Last Name*</label>
-            <input name="lastName" id="lnBox" type="text" required />
-         </div>
-         <div class="formRow">
-            <label for="address">Address*</label>
-            <input name="address" id="addBox" type="text" required />
-         </div>
-         <div class="formRow">
-            <label for="group">Company or University</label>
-            <input name="group" id="groupBox" type="text" />
-         </div>
-         <div class="formRow">
-            <label for="email">E-mail*</label>
-            <input name="email" id="mailBox" type="email" required />
-         </div>
-         <div class="formRow">
-            <label for="phoneNumber">Phone Number*</label>
-            <input name="phoneNumber" id="phoneBox" type="tel" placeholder="(nnn) nnn-nnnn" 
-            pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$" required />
-         </div>
-         <div class="formRow">
-            <label for="acgipID">ACGIP Membership Number</label>
-            <input name="acgipID" id="idBox" placeholder="acgip-nnnnnn" type="text" 
-            pattern="^acgip\-\d{6}$" />
-         </div>
+      <form action="https://www.example.com/cg/register" method="post">
+         <label>Title</label>
+         <input name="title" id="titleBox" type="text" list="titleList" />
+         <datalist id="titleList">
+            <option>Mr.</option>
+            <option>Mrs.</option>
+            <option>Ms.</option>
+            <option>Prof.</option>
+            <option>Dr.</option>
+            <option>Assist. Prof</option>
+            <option>Assoc. Prof.</option>
+         </datalist>
          
 
+         <label>First Name*</label>
+         <input name="firstName" id="fnBox" type="text" required />
+         
+         <label>Last Name*</label>
+         <input name="lastName" id="lnBox" type="text" required />
+         
+         <label>Address*</label>
+         <textarea name="address" id="addBox" type="text" required></textarea>
+         
+         <label>Company or University</label>
+         <input name="group" id="groupBox" type="text" />
+         
+         <label>E-mail*</label>
+         <input name="email" id="mailBox" type="email" required />
+         
+         <label>Phone Number*</label>
+         <input name="phoneNumber" id="phoneBox" type="tel" placeholder="(nnn) nnn-nnnn" required pattern="\d{10}$|^(\(\d{3}[\s-]?\d{4}$"/>
+         
+         <label>ACGIP Membership Number</label>
+         <input name="acgipID" id="idBox" type="text" placeholder="acgip-nnnnnn" pattern="^acgip\-\d{6}$"/>
 
-
-
-
-
-
+         <label for="regList">Registration Category</label>
+         <select id="regList" name="registerType">
+            <option value="member">ACGIP Member ($695)</option>
+            <option value="nonmember">Non-Member ($795)</option>
+            <option value="student">Student ($310)</option>
+            <option value="poster">Poster ($95)</option>
+            <option value="guest">Guest ($35)</option>
+         </select>
+         
+         <p>
+            <input type="submit" value="Continue" />
+         </p>
+      </form>
    </section>
    
    <aside>
